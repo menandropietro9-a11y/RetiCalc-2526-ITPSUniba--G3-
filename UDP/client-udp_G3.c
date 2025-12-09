@@ -7,7 +7,7 @@
 #define _WINSOCK_DEPRECATED_NO_WARNINGS 
 
 // Blocco condizionale per la piattaforma Windows (WIN32)
-#if defined WIN32
+#if defined WIN32 || defined _WIN32
 #include <winsock2.h>   // Contiene definizioni per le funzioni Winsock
 #include <ws2tcpip.h>   // Contiene definizioni aggiuntive per le API di rete
 #pragma comment(lib, "ws2_32.lib") // Collega la libreria ws2_32.lib
@@ -145,4 +145,5 @@ int main(int argc, char *argv[]){
     ClearWinSock();            // Pulisce le risorse Winsock (se su Windows)
 
     return 0;
+
 }
